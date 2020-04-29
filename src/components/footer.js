@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import { rhythm } from '../utils/typography';
 import Bio from './bio';
+import { WhiteLink } from './links';
 
 const footer = () => (
   <FooterContainer>
@@ -12,22 +13,21 @@ const footer = () => (
       <div>
         © {new Date().getFullYear()}, erstellt von
         {` `}
-        <a
+        <WhiteLink
           href="https://www.andrekovac.com"
           target="_blank"
           rel="noopener noreferrer"
-          className={'normal'}
         >
           André Kovac
-        </a>
+        </WhiteLink>
         <span> • </span>
-        <Link className={'normal'} to={'/imprint'}>
+        <WhiteLink className={'normal'} to={'/imprint'}>
           Impressum
-        </Link>
+        </WhiteLink>
         <span> • </span>
-        <Link className={'normal'} to={'/privacy-policy'}>
+        <WhiteLink className={'normal'} to={'/privacy-policy'}>
           Datenschutzerklärung
-        </Link>
+        </WhiteLink>
       </div>
     </FooterInner>
   </FooterContainer>

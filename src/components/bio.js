@@ -12,6 +12,8 @@ import Image from 'gatsby-image';
 
 import { rhythm } from '../utils/typography';
 
+import { StandardLink } from './links';
+
 const Bio = () => {
   const data = useStaticQuery(graphql`
     query BioQuery {
@@ -57,13 +59,13 @@ const Bio = () => {
         ganzen Welt Programmieren und andere Dinge bei.
         {` `}
         Besuche seine{' '}
-        <a
+        <StandardLink
           href={`https://www.andrekovac.com/`}
           rel="noopener noreferrer"
           target="_blank"
         >
           Webseite
-        </a>{' '}
+        </StandardLink>{' '}
         um mehr über ihn zu erfahren und ihn anzuschreiben.
       </Text>
     </Wrapper>

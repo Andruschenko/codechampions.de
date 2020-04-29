@@ -6,6 +6,7 @@ import { rhythm, scale } from '../utils/typography';
 import Logo from './logo';
 import Bio from './bio';
 import Footer from './footer';
+import { StyledLink } from './links';
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`;
@@ -53,11 +54,6 @@ const Container = styled.div`
 
 const Title = styled.div`
   margin-left: 10px;
-`;
-
-const StyledLink = styled(Link)`
-  box-shadow: none;
-  color: inherit;
 `;
 
 const StyledHomeLink = styled(StyledLink)`
