@@ -72,7 +72,7 @@ const MainContainer = styled.main`
   background: white none repeat scroll 0% 0%;
 
   width: 100%;
-  max-width: ${rhythm(24)};
+  max-width: ${rhythm(26)};
   padding: ${rhythm(2)} ${rhythm(2)};
   border-radius: 5px;
 `;

@@ -48,7 +48,7 @@ const FooterContainer = styled.footer`
 
 const FooterInner = styled.div`
   width: 100%;
-  max-width: ${rhythm(24)};
+  max-width: ${rhythm(26)};
 
   padding: ${rhythm(1)};
 `;
