@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { rhythm, scale } from '../utils/typography';
 import Logo from './logo';
 import Bio from './bio';
+import Footer from './footer';
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`;
@@ -41,15 +42,7 @@ const Layout = ({ location, title, children }) => {
     <Container>
       <HeaderContainer>{header}</HeaderContainer>
       <MainContainer>{children}</MainContainer>
-      <FooterContainer>
-        <FooterInner>
-          <Bio />
-          <div>
-            © {new Date().getFullYear()}, Built and designed by{''}
-            <a href="https://www.andrekovac.com">André Kovac</a>
-          </div>
-        </FooterInner>
-      </FooterContainer>
+      <Footer />
     </Container>
   );
 };
@@ -92,24 +85,6 @@ const HeaderContainer = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
-
-const FooterContainer = styled.footer`
-  height: 300px;
-  padding: ${rhythm(1)};
-  background: linear-gradient(322deg, #f419e7, #9ba90c, #e32a1b);
-  background-size: 100% 150%;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const FooterInner = styled.div`
-  width: 100%;
-  max-width: ${rhythm(24)};
-
-  padding: ${rhythm(1)};
 `;
 
 export default Layout;
