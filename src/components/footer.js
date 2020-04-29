@@ -1,15 +1,16 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 import { rhythm } from '../utils/typography';
 import Bio from './bio';
+import Newsletter from './newsletter';
+
 import { WhiteLink } from './links';
 
 const footer = () => (
   <FooterContainer>
     <FooterInner>
-      <Bio />
+      <Newsletter />
       <div>
         © {new Date().getFullYear()}, erstellt von
         {` `}
@@ -36,8 +37,7 @@ const footer = () => (
 export default footer;
 
 const FooterContainer = styled.footer`
-  height: 300px;
-  padding: ${rhythm(1)};
+  min-height: 300px;
   background: linear-gradient(322deg, #f419e7, #9ba90c, #e32a1b);
   background-size: 100% 150%;
 
@@ -49,6 +49,5 @@ const FooterContainer = styled.footer`
 const FooterInner = styled.div`
   width: 100%;
   max-width: ${rhythm(26)};
-
   padding: ${rhythm(1)};
 `;

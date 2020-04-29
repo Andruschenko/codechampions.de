@@ -22,7 +22,7 @@ GrandView.overrideThemeStyles = ({ rhythm }) => {
       borderRadius: '4px',
     },
     blockquote: {
-      borderLeft: rhythm(6 / 16) + ' solid ' + '#914b00',
+      borderLeft: rhythm(6 / 16) + ' solid #914b00',
     },
   };
 };

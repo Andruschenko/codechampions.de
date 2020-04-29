@@ -82,8 +82,6 @@ const Wrapper = styled.div`
   background-color: white;
   padding: ${rhythm(0.5)};
   border-radius: 5px;
-
-  margin-bottom: ${rhythm(2.5)};
 `;
 
 export default Bio;
