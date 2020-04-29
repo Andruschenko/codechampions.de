@@ -5,11 +5,12 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Image from "gatsby-image"
+import React from 'react';
+import styled from 'styled-components';
+import { useStaticQuery, graphql } from 'gatsby';
+import Image from 'gatsby-image';
 
-import { rhythm } from "../utils/typography"
+import { rhythm } from '../utils/typography';
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -33,16 +34,11 @@ const Bio = () => {
         }
       }
     }
-  `)
+  `);
 
-  const { author, social } = data.site.siteMetadata
+  const { author, social } = data.site.siteMetadata;
   return (
-    <div
-      style={{
-        display: `flex`,
-        marginBottom: rhythm(2.5),
-      }}
-    >
+    <Wrapper>
       <Image
         fixed={data.avatar.childImageSharp.fixed}
         alt={author.name}
@@ -50,21 +46,42 @@ const Bio = () => {
           marginRight: rhythm(1 / 2),
           marginBottom: 0,
           minWidth: 50,
-          borderRadius: `100%`,
+          borderRadius: `25%`,
         }}
         imgStyle={{
-          borderRadius: `50%`,
+          borderRadius: `25%`,
         }}
       />
-      <p>
-        Written by <strong>{author.name}</strong> {author.summary}
+      <Text>
+        <strong>{author.name}</strong> bringt sehr vielen Menschen auf der
+        ganzen Welt Programmieren und andere Dinge bei.
         {` `}
-        <a href={`https://twitter.com/${social.twitter}`}>
-          You should follow him on Twitter
-        </a>
-      </p>
-    </div>
-  )
-}
+        Besuche seine{' '}
+        <a
+          href={`https://www.andrekovac.com/`}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Webseite
+        </a>{' '}
+        um mehr über ihn zu erfahren und ihn anzuschreiben.
+      </Text>
+    </Wrapper>
+  );
+};
 
-export default Bio
+const Text = styled.p`
+  margin: 0;
+`;
+
+const Wrapper = styled.div`
+  display: flex;
+
+  background-color: white;
+  padding: ${rhythm(0.5)};
+  border-radius: 5px;
+
+  margin-bottom: ${rhythm(2.5)};
+`;
+
+export default Bio;
