@@ -9,7 +9,7 @@ const siteMetadata = {
   social: {
     twitter: `andrekovac`,
   },
-}
+};
 
 module.exports = {
   siteMetadata: siteMetadata,
@@ -56,16 +56,16 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: "gatsby-remark-code-titles",
+            resolve: 'gatsby-remark-code-titles',
             options: {
-              className: "gatsby-remark-code-title",
+              className: 'gatsby-remark-code-title',
             },
           },
           {
-            resolve: "gatsby-remark-external-links",
+            resolve: 'gatsby-remark-external-links',
             options: {
-              target: "_blank",
-              rel: "nofollow",
+              target: '_blank',
+              rel: 'nofollow',
             },
           },
           `gatsby-remark-emoji`,
@@ -107,12 +107,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-catch-links`,
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
-      },
-    },
     `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
@@ -133,8 +127,19 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    {
+      resolve: `gatsby-plugin-gdpr-cookies`,
+      options: {
+        googleAnalytics: {
+          trackingId: 'UA-81014342-5',
+          cookieName: 'gatsby-gdpr-google-analytics',
+          anonymize: true,
+        },
+        environments: ['production'],
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};
