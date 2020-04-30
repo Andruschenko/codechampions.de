@@ -27,7 +27,7 @@ class PrivacyPolicyPage extends React.Component {
             <br />
             Phone: +49 176 98517802
             <br />
-            E-Mail: info[at]andrekovac[dot]com
+            E-Mail: andre[at]codechampions[dot]de
           </p>
           <h2>Your rights as the data subject</h2>
           <p>

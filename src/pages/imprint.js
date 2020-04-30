@@ -18,7 +18,7 @@ class ImprintPage extends React.Component {
           according to paragraph 55 Abs. 2 RStV:
         </p>
         <p>André Kovac Chausseestr. 6 10115 Berlin</p>
-        <p>Phone: +49 176 98517802 E-Mail: info[at]andrekovac[dot]com</p>
+        <p>Phone: +49 176 98517802 E-Mail: andre[at]codechampions[dot]de</p>
 
         <h3>Disclaimer</h3>
         <p>
