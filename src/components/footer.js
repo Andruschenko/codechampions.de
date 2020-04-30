@@ -6,10 +6,10 @@ import Newsletter from './newsletter';
 
 import { WhiteLink } from './links';
 
-const footer = () => (
+const footer = (props) => (
   <FooterContainer>
     <FooterInner>
-      <Newsletter />
+      {props.hideNewsletter ? null : <Newsletter />}
       <div>
         © {new Date().getFullYear()}, erstellt von
         {` `}
@@ -42,7 +42,7 @@ const FooterContainer = styled.footer`
 
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
 `;
 
 const FooterInner = styled.div`

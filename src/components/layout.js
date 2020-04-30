@@ -6,13 +6,15 @@ import { rhythm } from '../utils/typography';
 
 import Footer from './footer';
 import Header from './header';
+import GlobalStyles from '../GlobalStyles';
 
-const Layout = ({ location, title, children }) => {
+const Layout = ({ location, title, hideNewsletter, children }) => {
   return (
     <Container>
+      <GlobalStyles />
       <Header location={location} title={title} />
       <MainContainer>{children}</MainContainer>
-      <Footer />
+      <Footer hideNewsletter={hideNewsletter} />
       <CookieConsent
         location="bottom"
         buttonText="Akzeptieren"
@@ -35,6 +37,10 @@ const Layout = ({ location, title, children }) => {
 
 const Container = styled.div`
   background-color: #f7f7f7;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 `;
 
 const MainContainer = styled.main`
@@ -44,6 +50,8 @@ const MainContainer = styled.main`
   max-width: ${rhythm(26)};
 
   margin-bottom: ${rhythm(2)};
+
+  flex: 1;
 `;
 
 export default Layout;

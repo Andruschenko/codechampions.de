@@ -5,7 +5,7 @@ import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
-import { rhythm, scale } from '../utils/typography';
+import { rhythm } from '../utils/typography';
 import { StandardLink } from '../components/links';
 
 const BlogPostTemplate = ({ data, pageContext, location }) => {
@@ -40,7 +40,9 @@ const PageNav = ({ previous, next, post }) => {
     <nav>
       {post.frontmatter.type !== 'extra' && (
         <NavList>
-          <PageNavHeader>💪 Mach gleich weiter mit...</PageNavHeader>
+          <PageNavHeader>
+            <span role="img">💪</span> Mach gleich weiter mit...
+          </PageNavHeader>
           {/* <li>
             {previous && (
               <StandardLink to={previous.fields.slug} rel="prev">
@@ -61,7 +63,7 @@ const PageNav = ({ previous, next, post }) => {
       )}
       <HomeLinkHeader>
         <StandardLink to={`/`}>
-          Hier geht es zurück zur Startseite 🏠
+          Hier geht es zurück zur Startseite <span role="img">🏠</span>
         </StandardLink>
       </HomeLinkHeader>
     </nav>
