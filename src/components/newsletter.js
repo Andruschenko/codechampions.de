@@ -1,17 +1,62 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useForm } from 'react-hook-form';
+import { useCookies } from 'react-cookie';
 
 import { rhythm } from '../utils/typography';
 import { PURPLE, WHITE, YELLOW, PRIMARY } from '../constants/Color';
 
 const Newsletter = () => {
-  const { register, handleSubmit, errors } = useForm();
   const [isSuccess, setIsSuccess] = useState(false);
+  const [isDone, setIsDone] = useState(false);
+
+  const { register, handleSubmit, errors } = useForm();
+  const [cookies, setCookie] = useCookies([
+    'codechampions_email',
+    'codechampions_firstName',
+  ]);
 
   const onSubmit = (data) => {
-    console.log(data);
-    setIsSuccess(true);
+    const formId = process.env.GATSBY_CONVERT_KIT_FORM_ID;
+    const url = `https://api.convertkit.com/v3/forms/${formId}/subscribe`;
+
+    const requestBody = {
+      api_key: process.env.GATSBY_CONVERT_KIT_API_KEY,
+      email: data.email,
+      first_name: data.firstName,
+      tags: [process.env.GATSBY_CONVERT_KIT_TAG],
+    };
+
+    const requestOptions = {
+      method: 'POST',
+      body: JSON.stringify(requestBody),
+      headers: {
+        'Content-Type': 'application/json',
+        charset: 'utf-8',
+      },
+    };
+
+    // send POST request
+    fetch(url, requestOptions)
+      .then((res) => res.json())
+      .then((res) => {
+        if (!res.error) {
+          // set local state
+          setIsSuccess(true);
+          setIsDone(true);
+
+          // set cookies
+          setCookie('codechampions_email', data.email, { path: '/' });
+          setCookie('codechampions_firstName', data.firstName, { path: '/' });
+        }
+      })
+      .catch((error) => {
+        if (process.env.NODE_ENV === 'development') {
+          console.error('Error while sending data to ConvertKit', error);
+        }
+        setIsSuccess(false);
+        setIsDone(true);
+      });
   };
 
   const getEmailError = () => {
@@ -34,8 +79,8 @@ const Newsletter = () => {
     <Wrapper>
       <Title>Lust auf mehr? 😎</Title>
       <Description>
-        Melde dich beim Newsletter an und erfahre als Erster, wenn es etwas
-        Neues zum Lernen gibt! 🤓🎉
+        Melde dich beim Newsletter an und erfahre sofort, wenn es etwas Neues
+        zum Coden gibt! <span role="img">🤓🎉</span>
       </Description>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <LabelWrapper>
@@ -71,10 +116,11 @@ const Newsletter = () => {
         />
 
         <SubmitWrapper>
-          <Button type="submit">Anmelden</Button>
-          <SuccessText>
-            {isSuccess && `Perfekt!\nCheck deine Emails!`}
-          </SuccessText>
+          {isDone && isSuccess ? (
+            <SuccessText>{`Perfekt!\nCheck deine Emails und bestätige die Anmeldung!`}</SuccessText>
+          ) : (
+            <Button type="submit">Anmelden</Button>
+          )}
         </SubmitWrapper>
       </Form>
     </Wrapper>
@@ -128,6 +174,7 @@ const ErrorText = styled.span`
 
 const SubmitWrapper = styled(FlexWrapper)`
   margin-top: 20px;
+  min-height: 60px;
 `;
 
 const SuccessText = styled.div`
