@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const siteMetadata = {
   title: `Code Champions`,
   author: {
@@ -131,7 +133,7 @@ module.exports = {
       resolve: `gatsby-plugin-gdpr-cookies`,
       options: {
         googleAnalytics: {
-          trackingId: 'UA-81014342-5',
+          trackingId: process.env.GATSBY_GOOGLE_TRACKING_ID,
           cookieName: 'gatsby-gdpr-google-analytics',
           anonymize: true,
         },
