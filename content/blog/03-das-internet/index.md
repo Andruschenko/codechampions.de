@@ -2,6 +2,8 @@
 title: '3 - Was ist das Internet eigentlich?'
 date: '2020-04-29T14:41:00.000Z'
 description: 'Hier sprechen wir kurz darüber wie das Internet funktioniert'
+author: 'André'
+type: 'module'
 module: 3
 ---
 

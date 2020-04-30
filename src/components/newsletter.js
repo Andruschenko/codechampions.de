@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { rhythm } from '../utils/typography';
 import { PURPLE, WHITE, YELLOW, PRIMARY } from '../constants/Color';
 
-export default function Newsletter() {
+const Newsletter = () => {
   const { register, handleSubmit, errors } = useForm();
   const [isSuccess, setIsSuccess] = useState(false);
 
@@ -32,14 +32,14 @@ export default function Newsletter() {
 
   return (
     <Wrapper>
-      <Title>Lust auf mehr?</Title>
+      <Title>Lust auf mehr? 😎</Title>
       <Description>
         Melde dich beim Newsletter an und erfahre als Erster, wenn es etwas
-        Neues zum Lernen gibt!
+        Neues zum Lernen gibt! 🤓🎉
       </Description>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <LabelWrapper>
-          <Label for="firstName">Vorname</Label>
+          <Label htmlFor="firstName">Vorname</Label>
           <ErrorText>{getFirstNameError()}</ErrorText>
         </LabelWrapper>
         <Input
@@ -52,7 +52,7 @@ export default function Newsletter() {
         />
         <span>{errors.firstName && errors.firstName.message}</span>
         <LabelWrapper>
-          <Label for="email">Email</Label>
+          <Label htmlFor="email">Email</Label>
           <ErrorText>{getEmailError()}</ErrorText>
         </LabelWrapper>
         <Input
@@ -72,15 +72,21 @@ export default function Newsletter() {
 
         <SubmitWrapper>
           <Button type="submit">Anmelden</Button>
-          <SuccessText>{isSuccess && 'Geklappt!'}</SuccessText>
+          <SuccessText>
+            {isSuccess && `Perfekt!\nCheck deine Emails!`}
+          </SuccessText>
         </SubmitWrapper>
       </Form>
     </Wrapper>
   );
-}
+};
+
+export default Newsletter;
 
 const Wrapper = styled.div`
-  background-color: ${PURPLE};
+  background: linear-gradient(322deg, #e32a1b, #9ba90c, ${PURPLE});
+  background-size: 250% 350%;
+
   padding: ${rhythm(1)};
   border-radius: 5px;
   max-width: 320px;
@@ -124,10 +130,9 @@ const SubmitWrapper = styled(FlexWrapper)`
   margin-top: 20px;
 `;
 
-const SuccessText = styled.span`
+const SuccessText = styled.div`
   color: #ffcc34;
   font-weight: bold;
-  font-size: 1.1rem;
 `;
 
 const Form = styled.form`
@@ -158,7 +163,8 @@ const Button = styled.button`
   padding: 8px 15px;
   cursor: pointer;
   border: 1px solid ${YELLOW};
-  transition: all 100ms ease 0s;
+  transition: all 300ms ease 0s;
+  margin-right: ${rhythm(1)};
 
   &:hover,
   &:active {

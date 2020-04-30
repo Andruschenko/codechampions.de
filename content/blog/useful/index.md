@@ -2,6 +2,8 @@
 title: 'Nützliches'
 date: '2020-04-01T14:42:00.000Z'
 description: 'Nützliche Tipps und Kommandos'
+author: 'André'
+type: 'extra'
 ---
 
 ### Beim Programmieren oft gebraucht - auf der Deutschen Tastatur schwer zu finden

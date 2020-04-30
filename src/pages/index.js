@@ -12,27 +12,25 @@ const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title;
   const posts = data.allMarkdownRemark.edges;
 
-  return (
-    <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
-      <ElementWrapper>
-        {posts.map(({ node }) => {
+  const displayPosts = (type, title = undefined) => (
+    <ElementWrapper>
+      {title && <h2>{title}</h2>}
+      {posts
+        .filter(({ node }) => node.frontmatter.type === type)
+        .map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug;
+
           return (
             <article key={node.fields.slug}>
               <header>
-                <h3
-                  style={{
-                    marginBottom: rhythm(1 / 4),
-                  }}
-                >
+                <PostTitle>
                   <StandardLink
                     style={{ boxShadow: `none` }}
                     to={node.fields.slug}
                   >
                     {title}
                   </StandardLink>
-                </h3>
+                </PostTitle>
               </header>
               <section>
                 <p
@@ -44,7 +42,14 @@ const BlogIndex = ({ data, location }) => {
             </article>
           );
         })}
-      </ElementWrapper>
+    </ElementWrapper>
+  );
+
+  return (
+    <Layout location={location} title={siteTitle}>
+      <SEO title="All posts" />
+      {displayPosts('module', 'Lektionen')}
+      {displayPosts('extra', 'Extra Informationen')}
       <ElementWrapper>
         <Bio />
       </ElementWrapper>
@@ -61,6 +66,10 @@ const ElementWrapper = styled.div`
   margin-bottom: ${rhythm(1)};
 `;
 
+const PostTitle = styled.h3`
+  margin-bottom: ${rhythm(1 / 4)};
+`;
+
 export const pageQuery = graphql`
   query {
     site {
@@ -68,7 +77,11 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(
+      # Note: For this to work, at least one file has to be a draft!
+      filter: { frontmatter: { draft: { ne: true } } }
+      sort: { fields: [frontmatter___module], order: ASC }
+    ) {
       edges {
         node {
           excerpt
@@ -78,8 +91,13 @@ export const pageQuery = graphql`
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
+            author
             description
+            type
+            module
+            draft
           }
+          timeToRead
         }
       }
     }

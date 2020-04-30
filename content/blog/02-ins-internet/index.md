@@ -1,6 +1,8 @@
 ---
 title: '2 - Ins Internet'
 description: 'Vom Online Editor zum eigenen Editor am Computer'
+author: 'André'
+type: 'module'
 module: 2
 date: '2020-04-29T14:39:00.000Z'
 ---

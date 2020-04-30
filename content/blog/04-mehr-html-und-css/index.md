@@ -2,6 +2,8 @@
 title: '4 - Mehr HTML und CSS'
 date: '2020-04-29T14:42:00.000Z'
 description: 'Weitere HTML und CSS Befehle, um unsere Webseite noch geiler zu machen.'
+author: 'André'
+type: 'module'
 module: 4
 ---
 

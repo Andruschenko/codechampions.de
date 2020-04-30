@@ -2,6 +2,8 @@
 title: 'Das Terminal'
 date: '2020-04-01T14:42:00.000Z'
 description: 'Es wird auch Kommandozeile oder Befehlszeile genannt'
+author: 'André'
+type: 'extra'
 ---
 
 > Auf Englisch `Terminal` oder `Shell` genannt.

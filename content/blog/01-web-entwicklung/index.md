@@ -2,6 +2,8 @@
 title: '1 - Web Entwicklung'
 date: '2020-04-29T14:32:00.00Z'
 description: 'Die ersten Schritte zur Webentwicklung.'
+author: 'André'
+type: 'module'
 module: 1
 ---
 

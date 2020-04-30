@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { rhythm } from '../utils/typography';
-import Bio from './bio';
 import Newsletter from './newsletter';
 
 import { WhiteLink } from './links';
