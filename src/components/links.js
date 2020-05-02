@@ -6,6 +6,7 @@ import { PRIMARY, PRIMARY_HOVER, WHITE } from '../constants/Color';
 export const StyledLink = styled(Link)`
   /* box-shadow: none; */
   color: inherit;
+  transition: all 300ms ease 0s;
 
   &:hover,
   &:active {
@@ -17,6 +18,7 @@ export const StyledLink = styled(Link)`
 export const StandardLink = styled(Link)`
   /* box-shadow: none; */
   color: ${PRIMARY};
+  transition: all 300ms ease 0s;
 
   &:hover,
   &:active {
@@ -28,6 +30,7 @@ export const StandardLink = styled(Link)`
 export const WhiteLink = styled(Link)`
   /* box-shadow: none; */
   color: ${WHITE};
+  transition: all 300ms ease 0s;
 
   &:hover,
   &:active {

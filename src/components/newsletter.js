@@ -115,9 +115,22 @@ const Newsletter = () => {
           error={!!errors.email}
         />
 
-        <SubmitWrapper>
+        <SubmitWrapper row={isDone && isSuccess}>
           {isDone && isSuccess ? (
-            <SuccessText>{`Perfekt!\nCheck deine Emails und bestätige die Anmeldung!`}</SuccessText>
+            <>
+              <SuccessText>{`Perfekt!\nCheck deine Emails und bestätige die Anmeldung!`}</SuccessText>
+              <Box>
+                <Text>Keine Email erhalten?</Text>
+                <ButtonRepeat
+                  onClick={() => {
+                    setIsSuccess(false);
+                    setIsDone(false);
+                  }}
+                >
+                  Nochmal probieren
+                </ButtonRepeat>
+              </Box>
+            </>
           ) : (
             <Button type="submit">Anmelden</Button>
           )}
@@ -147,6 +160,12 @@ const Title = styled.h3`
   margin-top: 0;
 `;
 
+const Text = styled.span`
+  color: ${WHITE};
+  font-size: 0.9rem;
+  width: 40%;
+`;
+
 const Description = styled.p`
   color: ${WHITE};
 `;
@@ -156,6 +175,19 @@ const FlexWrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+`;
+
+const SubmitWrapper = styled(FlexWrapper)`
+  margin-top: 20px;
+  min-height: 60px;
+
+  flex-direction: ${(props) => (props.row ? 'column' : 'inherit')};
+`;
+
+const Box = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 const LabelWrapper = styled(FlexWrapper)`
@@ -172,14 +204,10 @@ const ErrorText = styled.span`
   font-size: 0.8rem;
 `;
 
-const SubmitWrapper = styled(FlexWrapper)`
-  margin-top: 20px;
-  min-height: 60px;
-`;
-
 const SuccessText = styled.div`
   color: #ffcc34;
   font-weight: bold;
+  margin-bottom: ${rhythm(1)};
 `;
 
 const Form = styled.form`
@@ -211,11 +239,15 @@ const Button = styled.button`
   cursor: pointer;
   border: 1px solid ${YELLOW};
   transition: all 300ms ease 0s;
-  margin-right: ${rhythm(1)};
 
   &:hover,
   &:active {
     background-color: ${PRIMARY};
     border: 1px solid ${PRIMARY};
   }
+`;
+
+const ButtonRepeat = styled(Button)`
+  font-size: 0.9rem;
+  padding: 2px 5px;
 `;
