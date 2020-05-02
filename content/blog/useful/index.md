@@ -28,7 +28,7 @@ type: 'extra'
 
 1. Installiere die [Live Server Erweiterung](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
 2. Die `html` Datei muss mindestens einen `body` (oder `head`) enthalten, damit es funktioniert.
-3. Rechtsklick -> Falls `Open with Live Server` option nicht dabei ist, dann so öffnen:
+3. Rechtsklick und `Open with Live Server` auswählen. -> Falls `Open with Live Server` option nicht dabei ist, dann so öffnen:
    1. `Cmd` + `Shift` + `p` drücken
    2. "Live Server" eintippen und dann die Zeile "Live Server: Open with Live Server" wählen und `Enter` drücken.
    3. Es öffnet sich ein Browser Fenster.
