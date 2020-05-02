@@ -41,7 +41,10 @@ const PageNav = ({ previous, next, post }) => {
       {post.frontmatter.type !== 'extra' && (
         <NavList>
           <PageNavHeader>
-            <span role="img">💪</span> Mach gleich weiter mit...
+            <span role="img" aria-label="Power Icon">
+              💪
+            </span>{' '}
+            Mach gleich weiter mit...
           </PageNavHeader>
           {/* <li>
             {previous && (
@@ -63,7 +66,10 @@ const PageNav = ({ previous, next, post }) => {
       )}
       <HomeLinkHeader>
         <StandardLink to={`/`}>
-          Hier geht es zurück zur Startseite <span role="img">🏠</span>
+          Hier geht es zurück zur Startseite{' '}
+          <span role="img" aria-label="Home Icon">
+            🏠
+          </span>
         </StandardLink>
       </HomeLinkHeader>
     </nav>

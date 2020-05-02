@@ -22,11 +22,20 @@ const Confirmed = (props) => {
         Hallo
         {!!cookies['codechampions_firstName'] &&
           ` ${cookies['codechampions_firstName']}`}
-        ! <span role="img">😃</span>
+        !{' '}
+        <span role="img" aria-label="Smiling Face Icon">
+          😃
+        </span>
         <br />
-        Du bist nun offiziell ein Code Champion! <span role="img">🏅</span> Du
-        wirst ab jetzt zum Programmieren Lernen motiviert und wirst ab und zu
-        Emails von mir erhalten. <span role="img">📮</span>
+        Du bist nun offiziell ein Code Champion!{' '}
+        <span role="img" aria-label="Medal Icon">
+          🏅
+        </span>{' '}
+        Du wirst ab jetzt zum Programmieren Lernen motiviert und wirst ab und zu
+        Emails von mir erhalten.{' '}
+        <span role="img" aria-label="Post Box Icon">
+          📮
+        </span>
       </p>
       <p>
         Solltest Du einmal keine Emails zum Programmieren lernen mehr erhalten
@@ -40,7 +49,10 @@ const Confirmed = (props) => {
       </p>
       <h4>
         <StandardLink to={`/`}>
-          Hier geht es zur Startseite <span role="img">🏠</span>
+          Hier geht es zur Startseite{' '}
+          <span role="img" aria-label="House Icon">
+            🏠
+          </span>
         </StandardLink>
       </h4>
     </Layout>
