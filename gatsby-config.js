@@ -3,7 +3,8 @@ require('dotenv').config();
 const siteMetadata = {
   title: `Code Champions`,
   author: {
-    name: `André Kovac`,
+    name: `André`,
+    surname: `Kovac`,
     summary: `bringt vielen Menschen das Programmieren und andere Dinge bei.`,
   },
   description: `Lerne deine eigene Webseite zu programmieren!`,

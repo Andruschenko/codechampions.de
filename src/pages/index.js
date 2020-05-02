@@ -87,8 +87,7 @@ const BlogIndex = ({ data, location }) => {
               🦎
             </span>
             <br />
-            Und erzähle gerne deinen Freunden von dem Programm und lernt dann
-            gemeinsam programmieren!{' '}
+            Und erzähle gerne deinen Freunden von dem Programm!{' '}
             <span role="img" aria-label="Welt">
               👩‍💻👨‍💻
             </span>
