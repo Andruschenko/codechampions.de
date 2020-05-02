@@ -108,7 +108,7 @@ const Newsletter = () => {
         <Input
           id="firstName"
           type="text"
-          placeholder="Lisa"
+          placeholder="Dein Name"
           name="firstName"
           ref={register({ required: true, maxLength: 60 })}
           error={!!errors.firstName}
@@ -121,7 +121,7 @@ const Newsletter = () => {
         <Input
           id="email"
           type="text"
-          placeholder="lisa@mail.com"
+          placeholder="deine@email.de"
           name="email"
           ref={register({
             required: true,
