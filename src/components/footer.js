@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import { rhythm } from '../utils/typography';
 import Newsletter from './newsletter';
+import Bio from './bio';
 
 import { WhiteLink } from './links';
 
@@ -10,6 +11,9 @@ const footer = (props) => (
   <FooterContainer>
     <FooterInner>
       {props.hideNewsletter ? null : <Newsletter />}
+      <ElementWrapper>
+        <Bio />
+      </ElementWrapper>
       <div>
         © {new Date().getFullYear()}, erstellt von
         {` `}
@@ -34,6 +38,13 @@ const footer = (props) => (
 );
 
 export default footer;
+
+const ElementWrapper = styled.div`
+  background: white none repeat scroll 0% 0%;
+  padding: ${rhythm(1)} ${rhythm(2)};
+  border-radius: 5px;
+  margin-bottom: ${rhythm(1)};
+`;
 
 const FooterContainer = styled.footer`
   min-height: 300px;

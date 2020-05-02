@@ -55,8 +55,8 @@ const Bio = () => {
         }}
       />
       <Text>
-        <strong>{author.name}</strong> bringt sehr vielen Menschen auf der
-        ganzen Welt Programmieren und andere Dinge bei.
+        <strong>{author.name}</strong> bringt vielen Menschen auf der ganzen
+        Welt Programmieren und andere Dinge bei.
         {` `}
         Besuche seine{' '}
         <StandardLink
@@ -66,7 +66,7 @@ const Bio = () => {
         >
           Webseite
         </StandardLink>{' '}
-        um mehr über ihn zu erfahren und ihn anzuschreiben.
+        um mehr über ihn zu erfahren und ihn zu kontaktieren, wenn du magst.
       </Text>
     </Wrapper>
   );

@@ -16,6 +16,27 @@ const Newsletter = () => {
     'codechampions_firstName',
   ]);
 
+  const preRelease = true;
+
+  const descriptionTitle = () => (
+    <>
+      {preRelease ? 'Lerne Programmieren!' : 'Lust auf mehr?'}{' '}
+      <span role="img" aria-label="Cool Face Icon">
+        😎
+      </span>
+    </>
+  );
+  const descriptionText = () => (
+    <>
+      {preRelease
+        ? 'Melde dich beim Newsletter an und erfahre sofort, wenn das Programm beginnt!'
+        : 'Melde dich beim Newsletter an und erfahre sofort, wenn es etwas Neues zum Coden gibt!'}{' '}
+      <span role="img" aria-label="Yeah Icon">
+        🤓🎉
+      </span>
+    </>
+  );
+
   const onSubmit = (data) => {
     const formId = process.env.GATSBY_CONVERT_KIT_FORM_ID;
     const url = `https://api.convertkit.com/v3/forms/${formId}/subscribe`;
@@ -77,11 +98,8 @@ const Newsletter = () => {
 
   return (
     <Wrapper>
-      <Title>Lust auf mehr? 😎</Title>
-      <Description>
-        Melde dich beim Newsletter an und erfahre sofort, wenn es etwas Neues
-        zum Coden gibt! <span role="img">🤓🎉</span>
-      </Description>
+      <Title>{descriptionTitle()}</Title>
+      <Description>{descriptionText()}</Description>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <LabelWrapper>
           <Label htmlFor="firstName">Vorname</Label>
@@ -158,6 +176,7 @@ const Wrapper = styled.div`
 const Title = styled.h3`
   color: ${WHITE};
   margin-top: 0;
+  line-height: 1.5;
 `;
 
 const Text = styled.span`

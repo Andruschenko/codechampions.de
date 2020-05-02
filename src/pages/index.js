@@ -48,11 +48,58 @@ const BlogIndex = ({ data, location }) => {
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
-      {displayPosts('module', 'Lektionen')}
-      {displayPosts('extra', 'Extra Informationen')}
       <ElementWrapper>
-        <Bio />
+        <div>
+          <h2>
+            Werde zum <b>Code Champion</b>{' '}
+            <span role="img" aria-label="Smiling Face Icon">
+              🏅
+            </span>
+            !
+          </h2>
+          <p>
+            Lerne mit coolen Videos{' '}
+            <span role="img" aria-label="Welt">
+              📹
+            </span>{' '}
+            deine erste eigene Homepage{' '}
+            <span role="img" aria-label="Welt">
+              💻
+            </span>{' '}
+            zu bauen! Deine eigene Homepage in der du der Welt{' '}
+            <span role="img" aria-label="Welt">
+              🌍
+            </span>{' '}
+            von dir, deinem Lieblingshobby oder deinem Idol erzählen kannst. Mit
+            deiner Persönlichen Web-Adresse, die du sofort mit jedem teilen
+            kannst.{' '}
+            <span role="img" aria-label="Welt">
+              🤓
+            </span>
+          </p>
+          <p>
+            Melde dich gleich beim Newsletter an.{' '}
+            <span role="img" aria-label="Welt">
+              👇
+            </span>{' '}
+            Dann verpasst du nicht den Start des Programms!{' '}
+            <span role="img" aria-label="Welt">
+              🦎
+            </span>
+            <br />
+            Und erzähle gerne deinen Freunden von dem Programm und lernt dann
+            gemeinsam programmieren!{' '}
+            <span role="img" aria-label="Welt">
+              👩‍💻👨‍💻
+            </span>
+          </p>
+        </div>
       </ElementWrapper>
+      {/* {displayPosts('module', 'Lektionen')} */}
+      {/* {displayPosts('extra', 'Extra Informationen')} */}
+      {/* <ElementWrapper>
+        <Bio />
+      </ElementWrapper> */}
     </Layout>
   );
 };
