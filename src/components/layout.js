@@ -6,12 +6,10 @@ import { rhythm } from '../utils/typography';
 
 import Footer from './footer';
 import Header from './header';
-import GlobalStyles from '../GlobalStyles';
 
 const Layout = ({ location, title, hideNewsletter, children }) => {
   return (
     <Container>
-      <GlobalStyles />
       <Header location={location} title={title} />
       <MainContainer>{children}</MainContainer>
       <Footer hideNewsletter={hideNewsletter} />
