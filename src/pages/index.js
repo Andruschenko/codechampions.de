@@ -47,7 +47,7 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
+      <SEO title="Werde zum Code Champion - Lerne Programmieren und erstelle deine eigene Webseite" />
       <ElementWrapper>
         <div>
           <h2>

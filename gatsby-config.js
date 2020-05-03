@@ -7,7 +7,7 @@ const siteMetadata = {
     surname: `Kovac`,
     summary: `bringt vielen Menschen das Programmieren und andere Dinge bei.`,
   },
-  description: `Lerne deine eigene Webseite zu programmieren!`,
+  description: `Code Champions ist das Programm für alle, die mithilfe spannender Videos Programmieren lernen möchten`,
   siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
   social: {
     twitter: `andrekovac`,
