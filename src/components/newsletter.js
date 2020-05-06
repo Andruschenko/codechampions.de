@@ -29,7 +29,7 @@ const Newsletter = () => {
   const descriptionText = () => (
     <>
       {preRelease
-        ? 'Melde dich beim Newsletter an und erfahre sofort, wenn das Programm beginnt!'
+        ? 'Melde dich jetzt beim Newsletter an und du bekommst einen Link zu den Videos, sobald sie fertig sind!'
         : 'Melde dich beim Newsletter an und erfahre sofort, wenn es etwas Neues zum Coden gibt!'}{' '}
       <span role="img" aria-label="Yeah Icon">
         🤓🎉

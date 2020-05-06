@@ -59,13 +59,13 @@ const Bio = () => {
         Welt Programmieren und andere Dinge bei.
         {` `}
         Besuche seine{' '}
-        <StandardLink
+        <a
           href={`https://www.andrekovac.com/`}
           rel="noopener noreferrer"
           target="_blank"
         >
           Webseite
-        </StandardLink>{' '}
+        </a>{' '}
         um mehr über ihn zu erfahren und ihn zu kontaktieren, wenn du magst.
       </Text>
     </Wrapper>
