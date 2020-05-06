@@ -47,7 +47,7 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="Werde zum Code Champion - Lerne Programmieren und erstelle deine eigene Webseite" />
+      <SEO title="Werde zum Code Champion - Lerne kostenlos Programmieren und erstelle deine eigene Webseite" />
       <ElementWrapper>
         <div>
           <h2>
@@ -62,7 +62,7 @@ const BlogIndex = ({ data, location }) => {
             <span role="img" aria-label="Welt">
               📹
             </span>{' '}
-            deine erste eigene Homepage{' '}
+            komplett <b>kostenlos</b> deine erste eigene <b>Homepage</b>{' '}
             <span role="img" aria-label="Welt">
               💻
             </span>{' '}
@@ -78,7 +78,7 @@ const BlogIndex = ({ data, location }) => {
             </span>
           </p>
           <p>
-            Melde dich gleich beim Newsletter an.{' '}
+            Melde dich gleich beim <b>Newsletter</b> an.{' '}
             <span role="img" aria-label="Welt">
               👇
             </span>{' '}
